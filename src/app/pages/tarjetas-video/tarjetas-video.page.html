@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="back()" color="dark">
+        <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Tarjetas de video</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/cart">
+        <ion-icon name="cart-outline"></ion-icon>
+        Ver Carrito
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="filterProducts()"></ion-searchbar>
+
+  <ion-card *ngFor="let producto of filteredProducts">
+    <img [src]="producto.imagenUrl ? producto.imagenUrl : 'assets/image/default.png'" alt="Imagen del producto" />
+    <ion-card-header>
+      <ion-card-title>{{ producto.nombre }}</ion-card-title>
+      <ion-card-subtitle>Cantidad: {{ producto.cantidad }}</ion-card-subtitle>
+      <ion-button expand="block" (click)="add(producto)">
+        <ion-icon name="cart-outline" class="large-icon"></ion-icon>
+        Agregar al carrito
+      </ion-button>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="valor-text">Valor: {{ producto.valor | currency:'$':'symbol':'1.0-0' }}</div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Tarjetas Guardadas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div class="tarjetascontainer">
+  <img src="assets/image/tarjetaa.png" alt="Icono de Tarjeta" class="bank-card-image">
+</div>
+
+<ion-content>
+  <div class="tarjeta-container" *ngFor="let tarjeta of tarjetas">
+    <div class="tarjeta-header">
+      <ion-label>{{ mostrarTipoTarjeta(tarjeta.tipo) }}</ion-label>
+      <ion-button color="danger" (click)="eliminarTarjeta(tarjeta)">Eliminar</ion-button>
+    </div>
+    <div class="tarjeta-body">
+      <ion-label>{{ tarjeta.numero }}</ion-label>
+      <ion-label>{{ tarjeta.nombre }}</ion-label>
+      <ion-label>{{ tarjeta.fechaVencimiento }}</ion-label>
+    </div>
+    <div class="tarjeta-footer">
+      <ion-label>{{ mostrarTipoTarjeta(tarjeta.tipo) }}</ion-label>
+    </div>
+  </div>
+</ion-content>

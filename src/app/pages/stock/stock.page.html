@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Stock de Productos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" #content>
+
+  <ion-card>
+    <ion-item>
+      <ion-label>Nombre:</ion-label>
+      <ion-input [(ngModel)]="newProductos.nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Cantidad:</ion-label>
+      <ion-input [(ngModel)]="newProductos.cantidad"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Valor:</ion-label>
+      <ion-input [(ngModel)]="newProductos.valor"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>ImagenUrl:</ion-label>
+      <ion-input [(ngModel)]="newProductos.imagenUrl"></ion-input>
+    </ion-item>
+  </ion-card>
+
+
+  <ion-item>
+    <ion-label>Categoria:</ion-label>
+    <ion-select [(ngModel)]="categoriaSeleccionada" (ionChange)="loadProductos()">
+      <ion-select-option value="TarjetasVideo">Tarjetas de Video</ion-select-option>
+      <ion-select-option value="Procesadores">Procesadores</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <div style="margin: 20px;">
+    <ion-button (click)="save()" expand="block" shape="round" color="success">
+      Guardar
+    </ion-button>
+  </div>
+
+  <ion-list>
+    <ion-item *ngFor="let producto of productos">
+      <ion-label>
+        Nombre: {{ producto.nombre }}
+      </ion-label>
+      <ion-label>
+        Cantidad: {{ producto.cantidad }}
+      </ion-label>
+      <ion-label>
+        Valor: {{ producto.valor }}
+      </ion-label>
+
+      <ion-buttons slot="end">
+        <ion-button (click)="edit(producto)">
+          <ion-icon slot="icon-only" name="create" color="primary"></ion-icon>
+        </ion-button>
+
+        <ion-button (click)="delete(producto)">
+          <ion-icon slot="icon-only" name="trash" color="danger"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="cargando" style="text-align: center;">
+    <ion-spinner name="bubbles"></ion-spinner>
+  </div>
+</ion-content>

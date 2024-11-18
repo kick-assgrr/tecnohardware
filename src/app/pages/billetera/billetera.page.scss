@@ -1,0 +1,39 @@
+ion-content {
+    padding: 20px;
+  }
+  
+  .tarjeta-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .tarjeta-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .tarjeta-body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tarjeta-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .bank-card-image {
+    display: block; 
+    margin: 0 auto; 
+    width: 180px;
+    height: 150px; 
+  }
+
+  

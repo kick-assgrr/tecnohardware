@@ -1,0 +1,33 @@
+ion-card {
+  margin-bottom: 16px;
+}
+
+ion-card-header {
+  text-align: center; 
+}
+
+ion-card-title {
+  font-size: 1.5rem;
+}
+
+ion-card-subtitle {
+  font-size: 1rem;
+}
+
+.large-icon {
+  font-size: 4rem; 
+}
+.search-filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-filter-container ion-searchbar {
+  flex: 2;
+}
+
+.search-filter-container ion-segment {
+  flex: 1;
+  margin-left: 10px;
+}

@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Mi Cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="guardarDatosUsuario()" class="mi-cuenta-form">
+    <ion-list>
+
+
+      <ion-item>
+        <ion-label>
+          <ion-icon name="mail-outline" slot="start"></ion-icon>
+          Email:
+        </ion-label>
+        <ion-input type="email" [value]="usuario.email" readonly></ion-input>
+      </ion-item>
+
+      <ng-container *ngIf="providerId === 'password'">
+        <ion-item>
+          <ion-label>
+            <ion-icon name="person-outline" slot="start"></ion-icon>
+            Nombre:
+          </ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.nombre" name="nombre"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <ion-icon name="person-outline" slot="start"></ion-icon>
+            Apellido:
+          </ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.apellido" name="apellido"></ion-input>
+        </ion-item>
+      </ng-container>
+
+      <ion-item>
+        <ion-label>
+          <ion-icon name="home-outline" slot="start"></ion-icon>
+          Dirección:
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="usuario.direccion" name="direccion"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <ion-icon name="call-outline" slot="start"></ion-icon>
+          Teléfono:
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="usuario.telefono" name="telefono"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-button expand="full" type="submit">
+      <ion-icon name="save-outline" slot="start"></ion-icon>
+      Guardar
+    </ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="back()" color="dark">
+        <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Carrito de Compras</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <img src="assets/image/tecnoblanco.png" alt="Logo de la empresa" width="400px" height="250px">
+  
+  <ion-list>
+    <ion-item *ngFor="let producto of cartItems; let i = index">
+      <ion-label>
+        <h2>{{ producto.nombre }}</h2>
+        <p>Valor: {{ producto.valor | currency:'CLP':'symbol':'1.0-0' }}</p>
+        <p>
+          <ion-button size="small" (click)="decrementQuantity(i)">-</ion-button>
+          {{ producto.cantidad }}
+          <ion-button size="small" (click)="incrementQuantity(i)">+</ion-button>
+        </p>
+      </ion-label>
+      <ion-button slot="end" color="danger" (click)="removeFromCart(i)">
+        <ion-icon name="trash" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-label>
+      <h2>Total</h2>
+    </ion-label>
+    <ion-badge color="success">{{ total | currency:'CLP':'symbol':'1.0-0' }}</ion-badge>
+  </ion-item>
+
+  <ion-button expand="block" color="danger" (click)="clearCart()">Vaciar Carrito</ion-button>
+  <ion-button expand="block" color="success" (click)="redirectToMercadoPago()">Pagar con Mercado Pago</ion-button>
+
+</ion-content>

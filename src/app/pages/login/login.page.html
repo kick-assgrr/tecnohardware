@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>Inicio de sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true">
+  <img src="assets/image/tecnoblanco.png" alt="Logo de la empresa" width="430px"  height="300px" > 
+  
+  <ion-card-content>
+ 
+
+    <ion-item>
+      <ion-label >Email:</ion-label>
+      <ion-input [(ngModel)]="email" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label >Contraseña:</ion-label>
+      <ion-input  [(ngModel)]="password" type="password"></ion-input>
+    </ion-item>
+  </ion-card-content>
+
+  <ion-button (click)="login()" expand="block" shape="round" class="button1"> <i class="fa-solid fa-key"></i> Acceder 
+  
+</ion-button>
+
+  <div class="container">
+
+    <ion-row>
+      <ion-button color="secondary" shape="round" (click)="regist()">
+        <i class="fa-regular fa-user"></i>
+        Registrarse
+      </ion-button>
+    </ion-row>
+
+    <ion-row>
+      <ion-button class="button-google" expand="block" shape="round" (click)="loginWithGoogle()">
+        <ion-icon name="logo-google" slot="start"></ion-icon>
+        Iniciar sesión con Google
+      </ion-button>
+    </ion-row>
+
+    <ion-row>
+      <a class="forgot-password" (click)="recoverpassword()">¿Has olvidao la contraseña?</a>
+    </ion-row>
+
+  </div>
+</ion-content>

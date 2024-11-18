@@ -1,0 +1,35 @@
+/* productos.page.scss */
+ion-card {
+    margin-bottom: 16px; /* Espaciado inferior entre tarjetas */
+  }
+  
+  ion-card-header {
+    text-align: center; /* Alineación centrada del título y subtítulo */
+  }
+  
+  ion-card-title {
+    font-size: 1.5rem; /* Tamaño de fuente del título */
+  }
+  
+  ion-card-subtitle {
+    font-size: 1rem; /* Tamaño de fuente del subtítulo */
+  }
+
+  .large-icon {
+    font-size: 4rem; /* Puedes ajustar el tamaño según tus necesidades */
+  }
+  .search-filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .search-filter-container ion-searchbar {
+    flex: 2;
+  }
+  
+  .search-filter-container ion-segment {
+    flex: 1;
+    margin-left: 10px;
+  }
+  
